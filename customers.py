@@ -6,7 +6,7 @@ customer = {
     "ytd_spend": 12500
 }  
 print(customer)
-print("=" *30)
+print("=" *30) #Exercise separator
 #Exercise 2: Update and Add
 print() #Add blank space in between to prevent bunching of output
 customer["phone"] = "(555) 123-4567"
@@ -72,5 +72,28 @@ for customer in customers:
     print(f"Tier: {customer['tier']}")
     print(f"Discount Amount: ${purchase_price - discounted_price:.2f}")
     print()
+print("=" *30)
+#Exercise 7: Nested Catalog 
 
+catalog = {
+    "Widget A": {"price": 9.99, "stock": 150},
+    "Gadget C": {"price": 49.99, "stock": 8}
+    }
+for product, details in catalog.items():
+    if details["stock"] < 20:
+        print(f"Product: {product} - LOW STOCK ALERT")
+print("=" *30)
 
+#Exercise 8: Sales by Region
+
+transactions = [
+    {"region": "South", "amount": 300},
+    {"region": "North", "amount": 150},
+    {"region": "South", "amount": 200}
+]
+summary = {}
+for transaction in transactions:
+    region = transaction["region"]
+    summary[region] = summary.get(region, 0) + transaction["amount"]
+for region in sorted(summary):
+    print(f"{region}: {summary[region]}")
