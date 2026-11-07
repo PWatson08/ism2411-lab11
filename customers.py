@@ -1,3 +1,9 @@
+#Reflection:
+#1. In Exercise 3 you saw the difference between .get() and bracket notation. When in real work would you use each one, and what's your rule of thumb for choosing?
+# I would use .get() when the key might not exist and I want to provide a default value, and bracket notation when I know the key exists or want to handle the missing key explicitly.
+#2. Exercise 8 asked you to build a summary dictionary with a loop. What does this pattern remind you of from Excel, and why might the Python version be more useful for large datasets?
+# This pattern reminds me of Excel's SUMIF function, which totals values that match a condition. Python is more useful for large datasets because it can process the data programmatically without manually creating formulas for each region.
+
 #Exercise 1 : one customer
 customer = {
     "name": "John Doe",
@@ -97,3 +103,4 @@ for transaction in transactions:
     summary[region] = summary.get(region, 0) + transaction["amount"]
 for region in sorted(summary):
     print(f"{region}: {summary[region]}")
+print("=" *30)
